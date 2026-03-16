@@ -122,7 +122,6 @@ for archivo in archivos:
     print("Brillo:", round(brillo,2))
     print("Energia:", energia)
 ```
-## resultados 
 
 ## Man 1 
 
