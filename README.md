@@ -143,30 +143,43 @@ Energia: 2484201169383.0
 <img width="724" height="393" alt="image" src="https://github.com/user-attachments/assets/9fc9448c-303f-43ec-82a7-c1db592ada52" />
 <img width="678" height="398" alt="image" src="https://github.com/user-attachments/assets/0622f756-9a21-44aa-b436-58a0378ec95d" />
 ## resultados
+
 Frecuencia fundamental: 123.36 Hz
 Frecuencia media: 542.96 Hz
 Brillo: 542.96
 Energia: 3217311983931.0
+
+
 ## Mujer 1
 <img width="724" height="393" alt="image" src="https://github.com/user-attachments/assets/871dcfef-c43a-4e95-ada2-e1e897a03dbe" />
 <img width="678" height="398" alt="image" src="https://github.com/user-attachments/assets/4ecf7cd5-c15a-4ac1-9ac2-da06519cccc2" />
 ## resultados 
+
+
 Frecuencia fundamental: 214.12 Hz
 Frecuencia media: 545.6 Hz
 Brillo: 545.6
 Energia: 8596806895859.0
+
+
 ## Mujer 2
 <img width="724" height="393" alt="image" src="https://github.com/user-attachments/assets/c0341665-b956-4b68-8274-9db7c0e05dcd" />
 <img width="678" height="398" alt="image" src="https://github.com/user-attachments/assets/f2675e8b-98e0-45ac-907c-d3d1ace12051" />
 ## resultados
+
+
 Frecuencia fundamental: 177.68 Hz
 Frecuencia media: 560.28 Hz
 Brillo: 560.28
 Energia: 2444546048837.0
+
+
 ## Mujer 3
 <img width="724" height="393" alt="image" src="https://github.com/user-attachments/assets/03d836be-c7b2-4dc3-8339-ba865006b60a" />
 <img width="678" height="398" alt="image" src="https://github.com/user-attachments/assets/7778101d-fec7-40f5-824b-22315d0c801b" />
 ## resultados
+
+
 Frecuencia fundamental: 484.79 Hz
 Frecuencia media: 599.59 Hz
 Brillo: 599.59
