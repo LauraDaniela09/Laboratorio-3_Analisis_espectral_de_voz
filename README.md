@@ -367,3 +367,73 @@ plt.show()
 
 
 ## Medición jitter y shimmer
+
+Se importan las librerias, se define la función `jitter_shimmer` donde se recibe la señal de voz, se calculan el jitter y shimmer y sus porcentajes.
+Finalmente se visualiza una grafica donde se ve en azul la señal original de voz, en rojo los cruces por ceros y en verde los picos. Y una tabla con los resultados de cada señal.
+
+```pythom
+import pandas as pd
+
+resultados = []
+
+for nombre, ruta in archivos.items():
+
+    print("Procesando:", nombre)
+
+    fs, audio = wavfile.read(ruta)
+
+    if audio.ndim > 1:
+        audio = audio[:,0]
+
+    ja, jr, sa, sr, cruces, peaks, audio = jitter_shimmer(audio, fs)
+
+    t = np.linspace(0, len(audio)/fs, len(audio))
+
+    plt.figure(figsize=(10,4))
+
+plt.figure(figsize=(10,4))
+
+fig, axs = plt.subplots(2, 3, figsize=(18, 8))
+axs = axs.flatten()
+
+color_senal = '#5A4FCF'
+color_cruces = '#D81B60'
+color_picos = '#311B92'
+
+resultados = []
+
+for i, (nombre, ruta) in enumerate(archivos.items()):
+
+    print("Procesando:", nombre)
+
+    fs, audio = wavfile.read(ruta)
+
+    if audio.ndim > 1:
+        audio = audio[:, 0]
+
+    ja, jr, sa, sr, cruces, peaks, audio = jitter_shimmer(audio, fs)
+
+    t = np.linspace(0, len(audio)/fs, len(audio))
+
+    ax = axs[i]
+
+    ax.plot(t, audio, color=color_senal, linewidth=1)
+
+    if len(cruces) > 0:
+        ax.scatter(t[cruces], audio[cruces], color=color_cruces, s=10)
+
+    if len(peaks) > 0:
+        ax.scatter(t[peaks], audio[peaks], color=color_picos, s=10)
+
+    ax.set_title(nombre)
+    ax.set_xlabel("Tiempo [s]")
+    ax.set_ylabel("Amplitud")
+    ax.grid(True, alpha=0.3)
+
+    resultados.append([nombre, ja, jr, sa, sr])
+
+plt.tight_layout()
+plt.show()
+```
+<img width="1790" height="789" alt="image" src="https://github.com/user-attachments/assets/ab26f90e-aa1b-40af-9247-5e086bebd458" />
+<img width="758" height="225" alt="image" src="https://github.com/user-attachments/assets/00867a27-7f9a-492f-a094-b81f387036cd" />
