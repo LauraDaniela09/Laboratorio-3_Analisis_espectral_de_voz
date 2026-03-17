@@ -292,8 +292,9 @@ El código usa `signal.freqz()` para obtener la respuesta en frecuencia del filt
 ### Filtro pasabanda mujer
 
 Se repite el mismo proceso para la señal de mujer pero con rango de 150-500Hz.
-<img width="1189" height="490" alt="image" src="https://github.com/user-attachments/assets/636e7335-ca71-40a3-88a9-aab50dc182ea" />
-
+<p align="center">
+<img width="600" height="1280" alt="image" src="https://github.com/user-attachments/assets/c5ff131e-8820-4fa1-a4ff-2330d086d916" />
+</p>
 
 ```python
 from scipy import signal
@@ -341,6 +342,8 @@ plt.ylabel("Amplitud")
 plt.tight_layout()
 plt.show()
 ```
+<img width="1189" height="490" alt="image" src="https://github.com/user-attachments/assets/254d845b-3031-4b6f-9590-96183ac8d449" />
+
 Se grafica la respuesta de frecuencia (Diagrama Bode de magnitud)
 
 ## Grafico de respuesta de frecuencia (bode)
