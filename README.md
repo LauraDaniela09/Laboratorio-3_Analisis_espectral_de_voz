@@ -212,3 +212,112 @@ for archivo in archivos:
 
 <h1 align="center"><i><b>𝙋𝙖𝙧𝙩𝙚 𝘽 𝙙𝙚𝙡 𝙡𝙖𝙗𝙤𝙧𝙖𝙩𝙤𝙧𝙞𝙤</b></i></h1>
 
+Primero se importan las librerias, se lee el archivo `/Man1.wav` y guarda la frecuencia de muestreo en `ratem1` y los datos de la señal en `Man1`.
+Después define los parametros del filtro pasabanda como la frecuencia de corte baja y alta basandose en los valores teoricos. Para hombres está el rango de 80-400Hz.
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import signal
+
+# Especificaciones
+K1 = -3
+K2 = -10
+fs = 4000  # frecuencia de muestreo
+
+def calcular_y_graficar(nombre, fl, fu, w1, w2, subplot):
+
+    wl = 2*np.pi*fl
+    wu = 2*np.pi*fu
+
+    # A y B
+    A = abs((w1**2 - wl*wu) / (w1*(wu - wl)))
+    B = abs((w2**2 - wl*wu) / (w2*(wu - wl)))
+
+    wr = min(A, B)
+
+    # Orden
+    n = np.log10((10**(-K2/10)-1)/(10**(-K1/10)-1)) / (2*np.log10(wr))
+    n_aprox = int(np.ceil(n))
+
+    print("\n======================")
+    print(nombre)
+    print("======================")
+    print(f"Rango: {fl}-{fu} Hz")
+    print(f"A = {A:.4f}")
+    print(f"B = {B:.4f}")
+    print(f"Wr = {wr:.4f}")
+    print(f"n = {n:.4f} ≈ {n_aprox}")
+
+    # Diseño del filtro
+    low = fl / (fs/2)
+    high = fu / (fs/2)
+
+    b, a = signal.butter(n_aprox, [low, high], btype='band')
+
+    # Respuesta en frecuencia
+    w, h = signal.freqz(b, a, worN=2000)
+    f = w * fs / (2*np.pi)
+
+    # Graficar
+    plt.subplot(1,2,subplot)
+
+    plt.plot(f, 20*np.log10(abs(h)), color='#5A4FCF', linewidth=2)
+
+    plt.axhline(-3, color='#D81B60', linestyle='--', label='-3 dB')
+    plt.axhline(-10, color='#311B92', linestyle='--', label='-10 dB')
+
+    plt.axvline(fl, color='#D81B60', linestyle=':', label='f1')
+    plt.axvline(fu, color='#311B92', linestyle=':', label='f2')
+
+    plt.title(f"{nombre} (n ≈ {n_aprox})")
+    plt.xlabel("Frecuencia [Hz]")
+    plt.ylabel("Magnitud [dB]")
+    plt.grid(True, alpha=0.3)
+    plt.legend()
+
+plt.figure(figsize=(12,5))
+
+calcular_y_graficar(
+    "Hombres",
+    fl=80,
+    fu=400,
+    w1=402.6,
+    w2=3613.2,
+    subplot=1
+)
+
+calcular_y_graficar(
+    "Mujeres",
+    fl=150,
+    fu=500,
+    w1=2*np.pi*150*0.8,
+    w2=2*np.pi*500*1.2,
+    subplot=2
+)
+
+plt.suptitle("Filtro Pasa Banda", fontsize=14)
+plt.tight_layout(rect=[0,0,1,0.95])
+plt.show()
+```
+## Resultado
+<img width="1189" height="495" alt="image" src="https://github.com/user-attachments/assets/a1745483-1796-458b-8b86-0f055d9905dd" />
+
+Hombres
+======================
+Rango: 80-400 Hz
+A = 1.3604
+B = 1.6232
+Wr = 1.3604
+n = 3.5771 ≈ 4
+
+
+Mujeres
+======================
+Rango: 150-500 Hz
+A = 1.4429
+B = 1.3571
+Wr = 1.3571
+n = 3.6053 ≈ 4
+
+
