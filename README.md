@@ -446,3 +446,48 @@ plt.show()
 <h1 align="center"><i><b>𝙋𝙖𝙧𝙩𝙚 𝘾 𝙙𝙚𝙡 𝙡𝙖𝙗𝙤𝙧𝙖𝙩𝙤𝙧𝙞𝙤</b></i></h1>
 <p align="center">
 <img width="356" height="831" alt="image" src="https://github.com/user-attachments/assets/c70041c5-e20e-4e06-a246-739f51b53392" />
+
+
+    
+## 1. ¿Qué diferencias se observan en la frecuencia fundamental?
+
+De acuerdo con los resultados obtenidos en el análisis, se evidenció que las voces femeninas presentaron valores de frecuencia fundamental más altos en comparación con las voces masculinas.
+Por ejemplo, en los datos obtenidos:
+- Las voces masculinas mostraron valores de F0 en un rango bajo
+- Las voces femeninas presentaron valores significativamente mayores
+Esto coincide con lo esperado teóricamente, ya que la frecuencia fundamental depende de la vibración de las cuerdas vocales, siendo mayor en mujeres debido a su menor tamaño.
+
+## 2. ¿Qué otras diferencias se notan en brillo, media o intensidad?
+
+A partir de los resultados obtenidos:
+
+# Brillo (centroide espectral):
+Se observó que las voces femeninas tienen valores más altos de centroide espectral, lo que indica mayor presencia de frecuencias altas. Esto se evidenció en los espectros donde los picos estaban más desplazados hacia frecuencias mayores.
+
+# Frecuencia media:
+Los resultados muestran que la frecuencia media en las voces femeninas es superior, confirmando que su contenido espectral está más distribuido en altas frecuencias.
+
+# Intensidad:
+No se evidenció una diferencia completamente consistente entre hombres y mujeres, ya que algunos registros masculinos presentaron mayor energía, mientras que otros femeninos también mostraron valores altos. Esto indica que la intensidad depende más de la forma de emisión que del género.
+
+Estos resultados coinciden con estudios de análisis acústico donde se evalúan características como intensidad, frecuencia y espectro para describir la voz humana.
+
+## 3. Conclusiones basadas en los resultados
+Con base en los datos obtenidos en el laboratorio, se concluye que:
+- La frecuencia fundamental fue el parámetro más claro para diferenciar las voces, siendo consistentemente mayor en mujeres.
+- Las voces femeninas presentaron un mayor contenido en frecuencias altas, lo cual se reflejó en valores más altos de brillo y frecuencia media.
+- Las voces masculinas mostraron un comportamiento espectral más concentrado en bajas frecuencias.
+- La intensidad no fue un parámetro determinante para diferenciar el género, ya que presentó variabilidad entre individuos.
+En general, los resultados obtenidos en el laboratorio coinciden con el comportamiento esperado de la voz humana, validando el uso del análisis espectral como herramienta para la clasificación de señales de voz.
+
+## 4. Importancia clínica del jitter y shimmer (con resultados)
+
+En los resultados obtenidos:
+- Los valores de jitter estuvieron dentro (o cercanos) al rango esperado en voces normales
+- Los valores de shimmer mostraron cierta variabilidad entre grabaciones
+
+Esto es importante porque:
+- Valores bajos indican una vibración estable de las cuerdas vocales
+- Valores altos pueden indicar alteraciones vocales
+Estos parámetros son ampliamente utilizados en el análisis clínico de la voz para detectar irregularidades, ya que permiten evaluar la estabilidad de la señal y posibles patologías asociadas.
+
