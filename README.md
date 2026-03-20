@@ -19,6 +19,8 @@ from scipy.io import wavfile
 Esa parte del código muestra la importación de librerías necesarias para trabajar con archivos de audio y analizarlos:`scipy.io.wavfile` y `wavfile` para leer y escribir archivos de audio `(.wav)`.`matplotlib.pyplot` para graficar señales.`numpy` para realizar operaciones numéricas y de matrices. `IPython.display.Audio` para reproducir el audio directamente en el notebook.`scipy.signal.find_peaks`para detectar picos o puntos importantes en la señal.
 
 <h1 align="center"><i><b>𝐏𝐚𝐫𝐭𝐞 A 𝐝𝐞𝐥 𝐥𝐚𝐛𝐨𝐫𝐚𝐭𝐨𝐫𝐢𝐨</b></i></h1>
+<p align="center">
+<img width="327" height="637" alt="image" src="https://github.com/user-attachments/assets/552dc55b-673e-4e17-8f9f-dab8ef3064d9" />
 
 En esta parte del codigo se utiliza la función `wav.read()` de `SciPy` para cargar el archivo  y obtener su frecuencia de muestreo y datos de la señal. Si el audio tiene más de un canal, se selecciona solo uno para trabajar en mono. Luego, con `np.linspace()` de `NumPy`, se crea el eje de tiempo para cada muestra. La librería `Matplotlib (plt.plot())` se usa para graficar la señal, mostrando la amplitud frente al tiempo. Finalmente, con `Audio()` de `IPython.display`, se reproduce el sonido directamente en el entorno de ejecución.este procedimiento se realiza con cada una de las señales tanto de mujeres como para hombres.
 
@@ -211,8 +213,9 @@ for archivo in archivos:
 -Energia: 7461476423006.0
 
 <h1 align="center"><i><b>𝙋𝙖𝙧𝙩𝙚 𝘽 𝙙𝙚𝙡 𝙡𝙖𝙗𝙤𝙧𝙖𝙩𝙤𝙧𝙞𝙤</b></i></h1>
-
-
+<p align="center">
+<img width="356" height="1041" alt="image" src="https://github.com/user-attachments/assets/f22f2f2c-551e-4360-b44b-043a4f0abee4" />
+</p>
 ### Filtro pasabanda hombre
 
 Antes de iniciar el codigo se desarrolló a mano el filtro pasabanda para poder encontrar el orden necesario y definir los parametros. 
@@ -441,3 +444,5 @@ plt.show()
 <img width="758" height="225" alt="image" src="https://github.com/user-attachments/assets/00867a27-7f9a-492f-a094-b81f387036cd" />
 
 <h1 align="center"><i><b>𝙋𝙖𝙧𝙩𝙚 𝘾 𝙙𝙚𝙡 𝙡𝙖𝙗𝙤𝙧𝙖𝙩𝙤𝙧𝙞𝙤</b></i></h1>
+<p align="center">
+<img width="356" height="831" alt="image" src="https://github.com/user-attachments/assets/c70041c5-e20e-4e06-a246-739f51b53392" />
