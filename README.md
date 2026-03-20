@@ -441,58 +441,7 @@ plt.tight_layout()
 plt.show()
 ```
 <img width="1790" height="789" alt="image" src="https://github.com/user-attachments/assets/ab26f90e-aa1b-40af-9247-5e086bebd458" />
-<img width="758" height="225" alt="image" src="https://github.com/user-attachments/assets/00867a27-7f9a-492f-a094-b81f387036cd" />
-
-## Jitter y shimmer de la señal de mujer filtrada
-
-posteriormente calculamos los mismos parametros de jitter y shimmer pero para la señal filtrada con el proposito de comparar que tanto afectaba el filtrado a estos valores
-```python
-import numpy as np
-import scipy.io.wavfile as wav
-import scipy.signal as signal
-import pandas as pd
-
-#Función para calcular Jitter y Shimmer
-def calcular_jitter_shimmer(signal_data, fs):
-    # Cruces por cero para medir periodos
-    cruces = np.where(np.diff(np.sign(signal_data)))[0]
-    periodos = np.diff(cruces) / fs
-    if len(periodos) < 2:
-        return np.nan, np.nan, np.nan, np.nan
-
-    #Jitter
-    jitter_abs = np.mean(np.abs(np.diff(periodos)))
-    jitter_rel = 100 * (jitter_abs / np.mean(periodos))
-
-    #Shimmer
-    amplitudes = []
-    for i in range(len(cruces) - 1):
-        amplitudes.append(np.max(signal_data[cruces[i]:cruces[i+1]]) -
-                          np.min(signal_data[cruces[i]:cruces[i+1]]))
-    amplitudes = np.array(amplitudes)
-
-    shimmer_abs = np.mean(np.abs(np.diff(amplitudes)))
-    shimmer_rel = 100 * (shimmer_abs / np.mean(amplitudes))
-
-    return jitter_abs, jitter_rel, shimmer_abs, shimmer_rel
-
-#Calcular métricas
-ja, jr, sa, sr = calcular_jitter_shimmer(Mujer1_filtrada, ratem1)
-
-#Mostrar resultados en tabla
-df_resultados = pd.DataFrame([{
-    "Señal": "Mujer1_filtrada",
-    "Jitter abs [s]": ja,
-    "Jitter rel [%]": jr,
-    "Shimmer abs": sa,
-    "Shimmer rel [%]": sr,
-}])
-
-df_resultados.index = ["Resultados"]
-print(df_resultados.T)
-
-```
-<img width="400" height="165" alt="image" src="https://github.com/user-attachments/assets/7ce8f6c4-6e3c-45f3-8e4d-92883bdebabd" />
+<img width="582" height="173" alt="image" src="https://github.com/user-attachments/assets/0b780214-4b07-4cce-8c6c-1515c735e7d3" />
 
 
 
